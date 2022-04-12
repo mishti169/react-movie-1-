@@ -1,0 +1,53 @@
+.btn {
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-size: 14px;
+  margin: 10px;
+  transition: all ease 0.3s;
+}
+.btn:hover {
+  cursor: pointer;
+  background-color: rgb(207, 207, 207); /*1*/
+}
+
+.btn-primary {
+  background-color: dodgerblue; /*1*/
+  color: white; /*2*/
+}
+
+.btn-primary:hover {
+  background-color: rgb(36, 102, 168); /*3*/
+}
+
+.btn-secondary {
+  background-color: rgb(168, 170, 173); /*1*/
+  color: white; /*2*/
+}
+
+.btn-secondary:hover {
+  background-color: rgb(140, 140, 141); /*1*/
+}
+
+.btn-danger {
+  background-color: rgb(243, 77, 26); /*1*/
+  color: white; /*2*/
+}
+
+.btn-danger:hover {
+  background-color: rgb(175, 54, 17); /*1*/
+}
+
+.btn-outline-primary {
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid dodgerblue;
+  color: dodgerblue;
+}
+
+.btn-outline-primary:hover {
+  background-color: dodgerblue;
+  color: #fff;
+}
