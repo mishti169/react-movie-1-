@@ -351,6 +351,8 @@ export default function App() {
     total_results: 9836,
   };
 
+  // component mount
+
   function showMovieList() {
     const movieList = res.results.map(function (singleMovie) {
       return (
@@ -365,9 +367,5 @@ export default function App() {
     });
     return movieList;
   }
-  return (
-    <div>
-      <div>{showMovieList()}</div>
-    </div>
-  );
+  return <div className="movie-list-wrapper">{showMovieList()}</div>;
 }

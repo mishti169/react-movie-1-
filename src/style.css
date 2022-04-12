@@ -1,3 +1,6 @@
-h1, p {
-  font-family: Lato;
+.movie-list-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  row-gap: 3rem;
 }

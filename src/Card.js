@@ -6,14 +6,14 @@ function Card(props) {
 
   return (
     <div
-      className="movie-list-container"
+      className="movie-container"
       style={{
         backgroundImage: `url(${
           props.imgSrc || 'https://wallpaperaccess.com/full/288744.jpg'
         })`,
       }}
     >
-      <div className="movie-list-container-element">
+      <div className="movie-container-element">
         <div className="movie-detail-wrapper">
           <span className="movie-rate">{props.rating}</span>
           <span className="movie-title">{props.title}</span>
@@ -23,7 +23,7 @@ function Card(props) {
           </div>
         </div>
         <p className="movie-description">{props.description}</p>
-        <Button text="Watch thriller" />
+        <Button text="Watch thriller" variant="danger" />
       </div>
     </div>
   );
