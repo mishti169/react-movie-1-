@@ -8,7 +8,7 @@ function Card(props) {
     <div
       className="movie-list-container"
       style={{
-        backgroungImage: `url(${
+        backgroundImage: `url(${
           props.imgSrc || 'https://wallpaperaccess.com/full/288744.jpg'
         })`,
       }}
