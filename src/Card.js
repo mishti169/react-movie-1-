@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Card.css';
 import Button from './Button';
 function Card(props) {
@@ -8,7 +8,7 @@ function Card(props) {
     <div
       className="movie-container"
       style={{
-        backgroundImage: `url(${
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url(${
           props.imgSrc || 'https://wallpaperaccess.com/full/288744.jpg'
         })`,
       }}

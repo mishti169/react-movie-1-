@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './style.css';
 import Card from './Card';
+import axios from 'axios';
 
 export default function App() {
-  const res = {
+  const response = {
     page: 1,
     results: [
       {
@@ -350,11 +351,23 @@ export default function App() {
     total_pages: 492,
     total_results: 9836,
   };
+  const [res, setRes] = useState({});
+  async function fetchMovies() {
+    const apiRes = await axios(
+      `https://api.themoviedb.org/3/movie/top_rated?api_key=d296f9125c5c7cacb5d98137b5dd8ded&language=en-US&page=1`
+    );
+    console.log(apiRes);
+    setRes(apiRes);
+  }
 
   // component mount
+  useEffect(function () {
+    console.log('hii mayur');
+    fetchMovies();
+  }, []);
 
   function showMovieList() {
-    const movieList = res.results.map(function (singleMovie) {
+    const movieList = res.data.results.map(function (singleMovie) {
       return (
         <Card
           rating={singleMovie.vote_average}
@@ -366,6 +379,10 @@ export default function App() {
       );
     });
     return movieList;
+  }
+
+  if (!res.data) {
+    return 'loading...';
   }
   return <div className="movie-list-wrapper">{showMovieList()}</div>;
 }
