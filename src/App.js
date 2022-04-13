@@ -382,6 +382,14 @@ export default function App() {
     return movieList;
   }
 
+  function getPreviousPageData() {
+    console.log("i'm Previous page");
+  }
+
+  function getNextPageData() {
+    console.log("i'm Next page");
+  }
+
   if (!res.data) {
     return 'loading...';
   }
@@ -389,8 +397,13 @@ export default function App() {
     <div>
       <div className="movie-list-wrapper">{showMovieList()}</div>;
       <div className="btn-wrapper">
-        <Button text="Previous" variant="danger" />
-        <Button text="Next" variant="danger" />
+        <Button
+          text="Previous"
+          variant="primary"
+          onBtnClick={getPreviousPageData}
+        />
+
+        <Button text="Next" variant="primary" onBtnClick={getNextPageData} />
       </div>
     </div>
   );
