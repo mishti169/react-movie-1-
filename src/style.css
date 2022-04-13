@@ -4,3 +4,9 @@
   justify-content: space-evenly;
   row-gap: 3rem;
 }
+.btn-wrapper{
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './style.css';
 import Card from './Card';
 import axios from 'axios';
+import Button from './Button';
 
 export default function App() {
   const response = {
@@ -384,5 +385,13 @@ export default function App() {
   if (!res.data) {
     return 'loading...';
   }
-  return <div className="movie-list-wrapper">{showMovieList()}</div>;
+  return (
+    <div>
+      <div className="movie-list-wrapper">{showMovieList()}</div>;
+      <div className="btn-wrapper">
+        <Button text="Previous" variant="danger" />
+        <Button text="Next" variant="danger" />
+      </div>
+    </div>
+  );
 }
