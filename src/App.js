@@ -406,13 +406,17 @@ export default function App() {
   return (
     <div>
       <header>
-        <form>
-          <input placeholder="Search.." type="text" name="Search" />
-          <button type="submit">
-          {/* <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" fixedWidth /> */}
-          <i class="fa-solid fa-magnifying-glass"></i>
+        <div className="inputWrapper">
+          <input
+            type="text"
+            placeholder="Search.."
+            name="Search"
+            className="searchBox"
+          />
+          <button className="btn-search">
+            <i className="fa-solid fa-magnifying-glass icon-search"></i>
           </button>
-        </form>
+        </div>
       </header>
       <div className="movie-list-wrapper">{showMovieList()}</div>
       <div className="btn-wrapper">
