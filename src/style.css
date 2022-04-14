@@ -15,17 +15,15 @@ header {
   border: 1px solid red;
   display: flex;
   justify-content: center;
-  padding: 1rem;
 }
 .searchBox {
-  padding: 1rem 15rem;
   border: none;
-  padding-left: 1rem;
-  /* background-color: rgb(235, 239, 241); */
+  width: 300px;
+  padding: 14px;
   font-size: 20px;
   color: dodgerblue;
   text-shadow: 0 13.36px 8.896px #c4b59d, 0 -2px 1px rgb(48, 48, 48);
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: rgba(128, 128, 128, 0.534);
   position: relative;
 }
