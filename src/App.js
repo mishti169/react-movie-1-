@@ -357,6 +357,7 @@ export default function App() {
   };
   const [res, setRes] = useState({});
   const [pageNo, setPageNo] = useState(1);
+  const [inputVal, setInputVal] = useState('');
 
   async function fetchMovies(page) {
     const apiRes = await axios(
@@ -367,13 +368,35 @@ export default function App() {
     setRes(apiRes);
   }
 
+  async function fetchByQuery(query, page = 1) {
+    const apiRes = await axios(
+      `https://api.themoviedb.org/3/search/multi?api_key=d296f9125c5c7cacb5d98137b5dd8ded&language=en-US&query=${query}&page=${page}&include_adult=false`
+    );
+    setRes(apiRes);
+  }
+
   // component mount
   useEffect(
     function () {
-      fetchMovies(pageNo);
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth',
+      });
+
+      if (inputVal == '') {
+        fetchMovies(pageNo);
+        return;
+      }
+
+      fetchByQuery(inputVal, pageNo);
     },
     [pageNo]
   );
+
+  useEffect(function () {
+    console.log('re-rendered');
+  });
 
   function showMovieList() {
     const movieList = res.data.results.map(function (singleMovie) {
@@ -400,23 +423,37 @@ export default function App() {
     setPageNo(pageNo - 1);
   }
 
+  function onFormSubmit(e) {
+    e.preventDefault();
+    fetchByQuery(inputVal);
+  }
+
+  function onInputChange(e) {
+    const val = e.target.value; // m
+    setInputVal(val); // m
+  }
+
   if (!res.data) {
     return 'loading...';
   }
   return (
     <div>
       <header>
-        <div className="inputWrapper">
-          <input
-            type="text"
-            placeholder="Search.."
-            name="Search"
-            className="searchBox"
-          />
-          <button className="btn-search">
-            <i className="fa-solid fa-magnifying-glass icon-search"></i>
-          </button>
-        </div>
+        <form onSubmit={onFormSubmit}>
+          <div className="inputWrapper">
+            <input
+              type="text"
+              placeholder="Search.."
+              name="Search"
+              className="searchBox"
+              value={inputVal}
+              onChange={onInputChange}
+            />
+            <button type="submit" className="btn-search">
+              <i className="fa-solid fa-magnifying-glass icon-search"></i>
+            </button>
+          </div>
+        </form>
       </header>
       <div className="movie-list-wrapper">{showMovieList()}</div>
       <div className="btn-wrapper">
