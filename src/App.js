@@ -3,6 +3,9 @@ import './style.css';
 import Card from './Card';
 import axios from 'axios';
 import Button from './Button';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+// import { solid } from '@fortawesome/fontawesome-svg-core/import';
 
 export default function App() {
   const response = {
@@ -355,20 +358,18 @@ export default function App() {
   const [res, setRes] = useState({});
   const [pageNo, setPageNo] = useState(1);
 
-  async function fetchMovies(pageNo) {
+  async function fetchMovies(page) {
     const apiRes = await axios(
       `https://api.themoviedb.org/3/movie/top_rated?api_key=d296f9125c5c7cacb5d98137b5dd8ded&language=en-US&page=${
-        pageNo || 1
+        page || 1
       }`
     );
-    console.log(apiRes);
     setRes(apiRes);
   }
 
   // component mount
   useEffect(
     function () {
-      console.log('hii mayur');
       fetchMovies(pageNo);
     },
     [pageNo]
@@ -404,6 +405,15 @@ export default function App() {
   }
   return (
     <div>
+      <header>
+        <form>
+          <input placeholder="Search.." type="text" name="Search" />
+          <button type="submit">
+          {/* <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" fixedWidth /> */}
+          <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+      </header>
       <div className="movie-list-wrapper">{showMovieList()}</div>
       <div className="btn-wrapper">
         <Button

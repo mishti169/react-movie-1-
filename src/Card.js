@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import './Card.css';
 import Button from './Button';
-function Card(props) {
-  console.log('hello');
 
+function Card(props) {
   return (
     <div
       className="movie-container"
