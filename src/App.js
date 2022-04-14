@@ -425,7 +425,7 @@ export default function App() {
 
   function onFormSubmit(e) {
     e.preventDefault();
-    fetchByQuery(inputVal);
+    setPageNo(1);
   }
 
   function onInputChange(e) {
