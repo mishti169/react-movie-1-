@@ -353,19 +353,26 @@ export default function App() {
     total_results: 9836,
   };
   const [res, setRes] = useState({});
-  async function fetchMovies() {
+  const [pageNo, setPageNo] = useState(1);
+
+  async function fetchMovies(pageNo) {
     const apiRes = await axios(
-      `https://api.themoviedb.org/3/movie/top_rated?api_key=d296f9125c5c7cacb5d98137b5dd8ded&language=en-US&page=1`
+      `https://api.themoviedb.org/3/movie/top_rated?api_key=d296f9125c5c7cacb5d98137b5dd8ded&language=en-US&page=${
+        pageNo || 1
+      }`
     );
     console.log(apiRes);
     setRes(apiRes);
   }
 
   // component mount
-  useEffect(function () {
-    console.log('hii mayur');
-    fetchMovies();
-  }, []);
+  useEffect(
+    function () {
+      console.log('hii mayur');
+      fetchMovies(pageNo);
+    },
+    [pageNo]
+  );
 
   function showMovieList() {
     const movieList = res.data.results.map(function (singleMovie) {
@@ -382,12 +389,14 @@ export default function App() {
     return movieList;
   }
 
-  function getPreviousPageData() {
-    console.log("i'm Previous page");
-  }
-
   function getNextPageData() {
     console.log("i'm Next page");
+    setPageNo(pageNo + 1);
+  }
+
+  function getPreviousPageData() {
+    console.log("i'm Previous page");
+    setPageNo(pageNo - 1);
   }
 
   if (!res.data) {
@@ -395,7 +404,7 @@ export default function App() {
   }
   return (
     <div>
-      <div className="movie-list-wrapper">{showMovieList()}</div>;
+      <div className="movie-list-wrapper">{showMovieList()}</div>
       <div className="btn-wrapper">
         <Button
           text="Previous"

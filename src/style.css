@@ -3,8 +3,9 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   row-gap: 3rem;
+  padding-top: 2rem;
 }
-.btn-wrapper{
+.btn-wrapper {
   display: flex;
   justify-content: center;
   gap: 2rem;
