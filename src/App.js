@@ -376,6 +376,9 @@ export default function App() {
     );
     setRes(apiRes);
   }
+  useEffect(function () {
+    fetchMovies(pageNo);
+  }, []);
 
   // component mount
   useEffect(
@@ -385,20 +388,9 @@ export default function App() {
         left: 0,
         behavior: 'smooth',
       });
-
-      if (inputVal === '') {
-        fetchMovies(pageNo);
-        return;
-      }
-
-      fetchByQuery(inputVal, pageNo);
     },
     [pageNo]
   );
-
-  useEffect(function () {
-    console.log('re-rendered');
-  });
 
   function showMovieList() {
     const movieList = res.data.results.map(function (singleMovie) {
@@ -417,17 +409,30 @@ export default function App() {
 
   function getNextPageData() {
     console.log("i'm Next page");
+    fetchMovies(pageNo + 1);
     setPageNo(pageNo + 1);
   }
 
   function getPreviousPageData() {
     console.log("i'm Previous page");
+    fetchMovies(pageNo - 1);
     setPageNo(pageNo - 1);
+  }
+  function getPreviousPageDataQuery() {
+    console.log('p-query');
+    fetchByQuery(inputVal, pageNo - 1);
+    setPageNo(pageNo - 1);
+  }
+  function getNextPageDataQuery() {
+    console.log('n-query');
+    fetchByQuery(inputVal, pageNo + 1);
+    setPageNo(pageNo + 1);
   }
 
   function onFormSubmit(e) {
     e.preventDefault();
-    setPageNo(0);
+    fetchByQuery(inputVal, 1);
+    setPageNo(1);
   }
 
   function onInputChange(e) {
@@ -467,6 +472,19 @@ export default function App() {
         />
 
         <Button text="Next" variant="primary" onBtnClick={getNextPageData} />
+      </div>
+      <div className="btn-wrapper">
+        <Button
+          text="Previous"
+          variant="danger"
+          onBtnClick={getPreviousPageDataQuery}
+        />
+
+        <Button
+          text="Next"
+          variant="danger"
+          onBtnClick={getNextPageDataQuery}
+        />
       </div>
     </div>
   );
