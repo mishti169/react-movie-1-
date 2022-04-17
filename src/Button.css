@@ -9,6 +9,15 @@
   margin: 10px;
   transition: all ease 0.3s;
 }
+.btn:disabled {
+  cursor: not-allowed;
+  background-color: #ede6db;
+}
+.btn:disabled:hover {
+  cursor: not-allowed;
+  background-color: #ede6db;
+}
+
 .btn:hover {
   cursor: pointer;
   background-color: rgb(207, 207, 207); /*1*/

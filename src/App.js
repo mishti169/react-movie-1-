@@ -396,6 +396,7 @@ export default function App() {
     const movieList = res.data.results.map(function (singleMovie) {
       return (
         <Card
+          // cardDesign="card1"
           rating={singleMovie.vote_average}
           title={singleMovie.title}
           description={singleMovie.overview}
@@ -501,12 +502,14 @@ export default function App() {
             text="Previous"
             variant="danger"
             onBtnClick={getPreviousPageDataQuery}
+            btnDisable={pageNo <= 1 ? true : false}
           />
 
           <Button
             text="Next"
             variant="danger"
             onBtnClick={getNextPageDataQuery}
+            btnDisable={pageNo === res.data.total_pages ? true : false}
           />
         </div>
       )}
@@ -516,9 +519,15 @@ export default function App() {
             text="Previous"
             variant="primary"
             onBtnClick={getPreviousPageData}
+            btnDisable={pageNo <= 1 ? true : false}
           />
 
-          <Button text="Next" variant="primary" onBtnClick={getNextPageData} />
+          <Button
+            text="Next"
+            variant="primary"
+            onBtnClick={getNextPageData}
+            btnDisable={pageNo === res.data.total_pages ? true : false}
+          />
         </div>
       )}
     </div>
