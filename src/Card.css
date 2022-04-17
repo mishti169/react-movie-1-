@@ -1,5 +1,8 @@
+* {
+  box-sizing: border-box;
+}
 .movie-container {
-  max-width: 300px;
+  width: 300px;
   min-height: 500px;
   background-size: cover;
   background-position: center;

@@ -370,7 +370,9 @@ export default function App() {
 
   async function fetchByQuery(query, page = 1) {
     const apiRes = await axios(
-      `https://api.themoviedb.org/3/search/multi?api_key=d296f9125c5c7cacb5d98137b5dd8ded&language=en-US&query=${query}&page=${page}&include_adult=false`
+      `https://api.themoviedb.org/3/search/multi?api_key=d296f9125c5c7cacb5d98137b5dd8ded&language=en-US&query=${query}&page=${
+        page || 1
+      }&include_adult=false`
     );
     setRes(apiRes);
   }
@@ -384,7 +386,7 @@ export default function App() {
         behavior: 'smooth',
       });
 
-      if (inputVal == '') {
+      if (inputVal === '') {
         fetchMovies(pageNo);
         return;
       }
@@ -425,7 +427,7 @@ export default function App() {
 
   function onFormSubmit(e) {
     e.preventDefault();
-    setPageNo(1);
+    setPageNo(0);
   }
 
   function onInputChange(e) {
@@ -436,6 +438,7 @@ export default function App() {
   if (!res.data) {
     return 'loading...';
   }
+
   return (
     <div>
       <header>
