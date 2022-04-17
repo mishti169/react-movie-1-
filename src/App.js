@@ -509,7 +509,11 @@ export default function App() {
             text="Next"
             variant="danger"
             onBtnClick={getNextPageDataQuery}
-            btnDisable={pageNo === res.data.total_pages ? true : false}
+            btnDisable={
+              pageNo === res.data.total_pages || res.data.total_pages === 0
+                ? true
+                : false
+            }
           />
         </div>
       )}
@@ -526,7 +530,11 @@ export default function App() {
             text="Next"
             variant="primary"
             onBtnClick={getNextPageData}
-            btnDisable={pageNo === res.data.total_pages ? true : false}
+            btnDisable={
+              pageNo === res.data.total_pages || res.data.total_pages === 0
+                ? true
+                : false
+            }
           />
         </div>
       )}
