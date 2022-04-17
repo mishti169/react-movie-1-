@@ -3,6 +3,7 @@ import './style.css';
 import Card from './Card';
 import axios from 'axios';
 import Button from './Button';
+import Loader from './Loader';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // import { solid } from '@fortawesome/fontawesome-svg-core/import';
@@ -473,7 +474,7 @@ export default function App() {
   }
 
   if (!res.data) {
-    return 'loading...';
+    return <Loader />;
   }
 
   return (
