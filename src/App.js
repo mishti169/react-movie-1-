@@ -439,6 +439,37 @@ export default function App() {
     const val = e.target.value; // m
     setInputVal(val); // m
   }
+  function renderQueryBtn() {
+    if (inputVal) {
+      return (
+        <div className="btn-wrapper">
+          <Button
+            text="Previous"
+            variant="danger"
+            onBtnClick={getPreviousPageDataQuery}
+          />
+
+          <Button
+            text="Next"
+            variant="danger"
+            onBtnClick={getNextPageDataQuery}
+          />
+        </div>
+      );
+    }
+
+    return (
+      <div className="btn-wrapper">
+        <Button
+          text="Previous"
+          variant="primary"
+          onBtnClick={getPreviousPageData}
+        />
+
+        <Button text="Next" variant="primary" onBtnClick={getNextPageData} />
+      </div>
+    );
+  }
 
   if (!res.data) {
     return 'loading...';
@@ -464,28 +495,7 @@ export default function App() {
         </form>
       </header>
       <div className="movie-list-wrapper">{showMovieList()}</div>
-      <div className="btn-wrapper">
-        <Button
-          text="Previous"
-          variant="primary"
-          onBtnClick={getPreviousPageData}
-        />
-
-        <Button text="Next" variant="primary" onBtnClick={getNextPageData} />
-      </div>
-      <div className="btn-wrapper">
-        <Button
-          text="Previous"
-          variant="danger"
-          onBtnClick={getPreviousPageDataQuery}
-        />
-
-        <Button
-          text="Next"
-          variant="danger"
-          onBtnClick={getNextPageDataQuery}
-        />
-      </div>
+      {renderQueryBtn()}
     </div>
   );
 }
