@@ -495,7 +495,32 @@ export default function App() {
         </form>
       </header>
       <div className="movie-list-wrapper">{showMovieList()}</div>
-      {renderQueryBtn()}
+      {inputVal && (
+        <div className="btn-wrapper">
+          <Button
+            text="Previous"
+            variant="danger"
+            onBtnClick={getPreviousPageDataQuery}
+          />
+
+          <Button
+            text="Next"
+            variant="danger"
+            onBtnClick={getNextPageDataQuery}
+          />
+        </div>
+      )}
+      {!inputVal && (
+        <div className="btn-wrapper">
+          <Button
+            text="Previous"
+            variant="primary"
+            onBtnClick={getPreviousPageData}
+          />
+
+          <Button text="Next" variant="primary" onBtnClick={getNextPageData} />
+        </div>
+      )}
     </div>
   );
 }
