@@ -46,12 +46,46 @@
 }
 .movie-description {
   text-align: justify;
+  font-size: 16px;
+  height: 144px;
   display: -webkit-box;
   -webkit-line-clamp: 7;
   -webkit-box-orient: vertical;
   font-family: 'Sanchez', serif;
-  font-size: 16px;
-  height: 144px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* card1 css */
+
+.movie-wrapper_card1 {
+  width: 500px;
+  height: fit-content;
+  border: 1px solid red;
+  border-radius: 16px;
+}
+.movie-wrapper_element_card1 {
+  border: 1px solid green;
+  display: grid;
+  grid-template-columns: auto 30%;
+  border-radius: 16px;
+}
+.movie-img-holder_card1 {
+  border: 2px dotted purple;
+  width: 50%;
+}
+.movie-titleGenreRating_card1 {
+  border: 2px solid yellow;
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+  border-radius: 16px;
+}
+.movie-description_card1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  font-family: 'Sanchez', serif;
   overflow: hidden;
   text-overflow: ellipsis;
 }

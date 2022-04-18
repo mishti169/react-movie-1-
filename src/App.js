@@ -397,7 +397,7 @@ export default function App() {
     const movieList = res.data.results.map(function (singleMovie) {
       return (
         <Card
-          // cardDesign="card1"
+          cardDesign="card1"
           rating={singleMovie.vote_average}
           title={singleMovie.title}
           description={singleMovie.overview}
