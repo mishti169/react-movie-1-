@@ -359,6 +359,7 @@ export default function App() {
   const [res, setRes] = useState({});
   const [pageNo, setPageNo] = useState(1);
   const [inputVal, setInputVal] = useState('');
+  const [val, setVal] = useState('');
 
   async function fetchMovies(page) {
     const apiRes = await axios(
@@ -397,7 +398,7 @@ export default function App() {
     const movieList = res.data.results.map(function (singleMovie) {
       return (
         <Card
-          cardDesign="card1"
+          cardDesign={val}
           rating={singleMovie.vote_average}
           title={singleMovie.title}
           description={singleMovie.overview}
@@ -472,6 +473,13 @@ export default function App() {
       </div>
     );
   }
+  function toggleCard(event) {
+    if (event.target.checked) {
+      setVal('card1');
+    } else {
+      setVal('');
+    }
+  }
 
   if (!res.data) {
     return <Loader />;
@@ -495,6 +503,8 @@ export default function App() {
             </button>
           </div>
         </form>
+        <input onChange={toggleCard} type="checkbox" name="card-switch" />
+        <label htmlFor="card-switch">Toggle Card View</label>
       </header>
       <div className="movie-list-wrapper">{showMovieList()}</div>
       {inputVal && (

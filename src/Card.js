@@ -10,7 +10,10 @@ function Card(props) {
           <div className="movie-details-wrapper_card1">
             <div className="movie-titleGenreRating_card1">
               <span className="movie-title-card1">{props.title}</span>
-              <span>{props.year}{props.genre}</span>
+              <span>
+                {props.year}
+                {props.genre}
+              </span>
               <span>{props.rating}</span>
             </div>
             <p className="movie-description_card1">
