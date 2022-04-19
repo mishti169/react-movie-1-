@@ -5,21 +5,19 @@ import Button from './Button';
 function Card(props) {
   if (props.cardDesign === 'card1') {
     return (
-      <div className="movie-wrapper_card1">
+      <div className="movieCard-wrapper_card1">
         <div className="movie-wrapper_element_card1">
           <div className="movie-details-wrapper_card1">
             <div className="movie-titleGenreRating_card1">
-              <span>DDLJ</span>
-              <span>2022,action,thiller,romance</span>
-              <span>7.9</span>
+              <span className="movie-title-card1">{props.title}</span>
+              <span>{props.year}{props.genre}</span>
+              <span>{props.rating}</span>
             </div>
             <p className="movie-description_card1">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
               accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
               quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-              aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-              eos qui ratione voluptatem sequi nesciunt.
+              dicta sunt explicabo.
             </p>
             <Button text="Watch thriller" variant="danger" />
           </div>

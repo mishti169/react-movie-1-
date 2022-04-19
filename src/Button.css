@@ -6,7 +6,7 @@
   font-weight: 800;
   letter-spacing: 1px;
   font-size: 14px;
-  margin: 10px;
+  margin: 10px 10px 10px 0;
   transition: all ease 0.3s;
 }
 .btn:disabled {

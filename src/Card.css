@@ -58,34 +58,59 @@
 
 /* card1 css */
 
-.movie-wrapper_card1 {
-  width: 500px;
+.movieCard-wrapper_card1 {
+  max-width: 550px;
   height: fit-content;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   border-radius: 16px;
 }
 .movie-wrapper_element_card1 {
-  border: 1px solid green;
+  padding: 0 0 0 16px;
+  background: linear-gradient(to right, #e5e6e6 50%, transparent 100%);
+  /* border: 1px solid green; */
   display: grid;
   grid-template-columns: auto 30%;
   border-radius: 16px;
+  position: relative;
+}
+.movie-details-wrapper_card1{
+  padding: 12px;
 }
 .movie-img-holder_card1 {
-  border: 2px dotted purple;
+  border-radius:0 16px 16px 0;
+  /* border: 2px dotted purple   ; */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom:0;
+  right: 0;
+  z-index: -5;
   width: 50%;
+  height: 100%;
 }
 .movie-titleGenreRating_card1 {
-  border: 2px solid yellow;
   display: flex;
   flex-direction: column;
   row-gap: 6px;
   border-radius: 16px;
 }
+.movie-title-card1{
+  /* border: 2px solid yellow; */
+  font-family: 'Overlock', cursive;
+  font-weight: 700;
+  font-size: 36px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+
+
+}
 .movie-description_card1 {
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
-  font-family: 'Sanchez', serif;
+  font-family: 'Maitree', serif;
   overflow: hidden;
   text-overflow: ellipsis;
 }
