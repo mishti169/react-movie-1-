@@ -1,5 +1,9 @@
+body{
+  background-color: hsl(0, 0%, 96%);
+}
 * {
   box-sizing: border-box;
+  /* background-color: hsl(0, 0%, 90%); */
 }
 .movie-container {
   width: 300px;
@@ -63,6 +67,10 @@
   height: fit-content;
   /* border: 1px solid red; */
   border-radius: 16px;
+  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px; */
+}
+.movieCard-wrapper_card1:hover{
+
 }
 .movie-wrapper_element_card1 {
   padding: 0 0 0 16px;
@@ -100,9 +108,9 @@
   font-family: 'Overlock', cursive;
   font-weight: 700;
   font-size: 36px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 
 
 }
