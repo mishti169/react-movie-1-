@@ -474,7 +474,7 @@ export default function App() {
   }
 
   if (!res.data) {
-    return <Loader />;
+    return <Loader />
   }
 
   return (
