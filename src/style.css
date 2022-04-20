@@ -4,10 +4,10 @@
 .movie-list-wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   gap: 5rem;
   padding-top: 5rem;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 .btn-wrapper {
