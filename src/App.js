@@ -503,8 +503,13 @@ export default function App() {
             </button>
           </div>
         </form>
-        <div>
-          <input onChange={toggleCard} type="checkbox" name="card-switch" />
+        <div className="toggleCardSwitch-wrapper">
+          <input
+            className="toggleInput"
+            onChange={toggleCard}
+            type="checkbox"
+            name="card-switch"
+          />
           <label htmlFor="card-switch">Toggle Card View</label>
         </div>
       </header>

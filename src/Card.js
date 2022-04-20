@@ -17,6 +17,7 @@ function Card(props) {
               <span>{props.rating}</span>
             </div>
             <p className="movie-description_card1">
+              {props.description}
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
               accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
               quae ab illo inventore veritatis et quasi architecto beatae vitae
