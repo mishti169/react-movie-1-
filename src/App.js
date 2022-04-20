@@ -503,8 +503,10 @@ export default function App() {
             </button>
           </div>
         </form>
-        <input onChange={toggleCard} type="checkbox" name="card-switch" />
-        <label htmlFor="card-switch">Toggle Card View</label>
+        <div>
+          <input onChange={toggleCard} type="checkbox" name="card-switch" />
+          <label htmlFor="card-switch">Toggle Card View</label>
+        </div>
       </header>
       <div className="movie-list-wrapper">{showMovieList()}</div>
       {inputVal && (
