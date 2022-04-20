@@ -1,14 +1,24 @@
 body {
-  background-color: hsl(0, 0%, 96%);
+  /* background-color: hsl(0, 0%, 96%); */
+  background-color: #e9e9e9;
+  margin: 0;
+  padding: 0;
 }
 * {
   box-sizing: border-box;
 }
+.header-wrapper {
+  width: 100%;
+  background-color: #a9a9a9;
+  position: sticky;
+  z-index: 5;
+  padding: 20px;
+}
 header {
   display: flex;
   justify-content: center;
-  margin: 0 auto;
-  width: 80%;
+  margin: 0 5%;
+  width: 90%;
 }
 
 .toggleCardSwitch-wrapper {
@@ -16,10 +26,9 @@ header {
   font-weight: 600;
 
   text-shadow: 0 13.36px 8.896px #c4b59d, 0 1px 1px rgb(48, 48, 48);
-  padding: 10px;
+  padding: 10px 60px;
   border-radius: 10px;
   color: rgb(224, 224, 224);
-
   background-color: rgba(128, 128, 128, 0.534);
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }

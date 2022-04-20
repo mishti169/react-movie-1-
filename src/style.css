@@ -1,12 +1,16 @@
 * {
   box-sizing: border-box;
 }
+/* .movie-list-container {
+  border: 2px solid blue;
+  margin: 1%;
+} */
 .movie-list-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 5rem;
-  padding-top: 5rem;
+  padding-top: 30px;
   width: 100%;
   margin: 0 auto;
 }

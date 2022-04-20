@@ -487,32 +487,35 @@ export default function App() {
 
   return (
     <div>
-      <header>
-        <form onSubmit={onFormSubmit}>
-          <div className="inputWrapper">
+      <div className="header-wrapper">
+        <header>
+          <form onSubmit={onFormSubmit}>
+            <div className="inputWrapper">
+              <input
+                type="text"
+                placeholder="Search.."
+                name="Search"
+                className="searchBox"
+                value={inputVal}
+                onChange={onInputChange}
+              />
+              <button type="submit" className="btn-search">
+                <i className="fa-solid fa-magnifying-glass icon-search"></i>
+              </button>
+            </div>
+          </form>
+          <div className="toggleCardSwitch-wrapper">
             <input
-              type="text"
-              placeholder="Search.."
-              name="Search"
-              className="searchBox"
-              value={inputVal}
-              onChange={onInputChange}
+              className="toggleInput"
+              onChange={toggleCard}
+              type="checkbox"
+              name="card-switch"
             />
-            <button type="submit" className="btn-search">
-              <i className="fa-solid fa-magnifying-glass icon-search"></i>
-            </button>
+            <label htmlFor="card-switch">Toggle Card View</label>
           </div>
-        </form>
-        <div className="toggleCardSwitch-wrapper">
-          <input
-            className="toggleInput"
-            onChange={toggleCard}
-            type="checkbox"
-            name="card-switch"
-          />
-          <label htmlFor="card-switch">Toggle Card View</label>
-        </div>
-      </header>
+        </header>
+      </div>
+      {/* <div className="movie-list-container"> */}
       <div className="movie-list-wrapper">{showMovieList()}</div>
       {inputVal && (
         <div className="btn-wrapper">
@@ -556,6 +559,7 @@ export default function App() {
           />
         </div>
       )}
+      {/* </div> */}
     </div>
   );
 }
