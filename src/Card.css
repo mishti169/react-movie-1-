@@ -99,7 +99,7 @@ header {
   background: linear-gradient(to right, #e5e6e6 50%, transparent 100%);
   /* border: 1px solid green; */
   display: grid;
-  grid-template-columns: auto 30%;
+  grid-template-columns: 70% 30%;
   border-radius: 16px;
   position: relative;
   height: 100%;
