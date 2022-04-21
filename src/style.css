@@ -22,6 +22,22 @@
   padding: 1rem;
 }
 
+.toggleCardSwitch-wrapper {
+  font-weight: 600;
+  text-shadow: 0 13.36px 8.896px #c4b59d, 0 1px 1px rgb(48, 48, 48);
+  padding: 10px 60px;
+  border-radius: 10px;
+  color: rgb(224, 224, 224);
+  background-color: rgba(128, 128, 128, 0.534);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  cursor: pointer;
+}
+
+.toggleInput {
+  transition: all ease 0.3s;
+  cursor: pointer;
+}
+
 .searchBox {
   border: none;
   width: 100%;
@@ -40,20 +56,20 @@
 }
 .btn-search {
   border: none;
-  background: none;
+  background: rgb(233, 231, 231);
   color: #fff;
   text-shadow: 0 13.36px 8.896px #c4b59d, 0 1px 1px rgb(48, 48, 48);
   position: absolute;
-  top: calc(50% - 30px);
   right: 0;
+  top: 0;
+  height: 100%;
   cursor: pointer;
+  padding: 20px 40px;
+  border-radius: 10px;
 }
 
 .icon-search {
   font-size: 20px;
-  padding: 20px 40px;
-  border-radius: 10px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 form {
   width: 100%;

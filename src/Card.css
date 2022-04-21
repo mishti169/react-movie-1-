@@ -20,23 +20,9 @@ body {
 header {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: 0 5%;
   width: 90%;
-}
-
-.toggleCardSwitch-wrapper {
-  /* border: 1px solid black; */
-  font-weight: 600;
-
-  text-shadow: 0 13.36px 8.896px #c4b59d, 0 1px 1px rgb(48, 48, 48);
-  padding: 10px 60px;
-  border-radius: 10px;
-  color: rgb(224, 224, 224);
-  background-color: rgba(128, 128, 128, 0.534);
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-}
-.toggleInput {
-  transition: all ease 0.3s;
 }
 
 .movie-container {
@@ -98,10 +84,11 @@ header {
 
 .movieCard-wrapper_card1 {
   max-width: 550px;
-  height: fit-content;
+  height: 320px;
   /* border: 1px solid red; */
   border-radius: 16px;
   transition: all ease 0.3s;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .movieCard-wrapper_card1:hover {
   box-shadow: 0px 0px 120px -25px rgb(0 0 0 / 50%);
@@ -114,6 +101,7 @@ header {
   grid-template-columns: auto 30%;
   border-radius: 16px;
   position: relative;
+  height: 100%;
 }
 .movie-details-wrapper_card1 {
   padding: 12px;

@@ -4,6 +4,7 @@ import Card from './Card';
 import axios from 'axios';
 import Button from './Button';
 import Loader from './Loader';
+import Switch from './Switch';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // import { solid } from '@fortawesome/fontawesome-svg-core/import';
@@ -504,7 +505,8 @@ export default function App() {
               </button>
             </div>
           </form>
-          <div className="toggleCardSwitch-wrapper">
+          <Switch onToggle={toggleCard} />
+          {/* <div className="toggleCardSwitch-wrapper">
             <input
               className="toggleInput"
               onChange={toggleCard}
@@ -512,7 +514,7 @@ export default function App() {
               name="card-switch"
             />
             <label htmlFor="card-switch">Toggle Card View</label>
-          </div>
+          </div> */}
         </header>
       </div>
       {/* <div className="movie-list-container"> */}
