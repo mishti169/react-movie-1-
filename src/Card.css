@@ -39,6 +39,7 @@ header {
   flex-direction: column;
   flex-shrink: 0;
   position: relative;
+  transition: all ease 0.3s;
 }
 .movie-container-element {
   margin-top: 60%;
