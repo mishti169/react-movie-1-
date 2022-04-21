@@ -10,9 +10,12 @@ body {
 .header-wrapper {
   width: 100%;
   background-color: #a9a9a9;
-  position: sticky;
+  position: fixed;
   z-index: 5;
   padding: 20px;
+  height: 106px;
+  top: 0;
+  left: 0;
 }
 header {
   display: flex;
